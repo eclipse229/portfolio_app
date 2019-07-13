@@ -1,7 +1,13 @@
 <html> 
     <head>
-        {% block title %}<a href='{% url 'projects' %}'>Home</a> {% endblock title %}
+        {% block title %}
+        <div id="sidebar">
+                <a href='{% url 'home' %}'>Home</a>
+        </div> 
+        {% endblock title %}
     </head>
 
-    {% block content %} {% endblock content %}
+    {% block content %} 
+    <img src="img/homepage.jpeg">
+    {% endblock content %}
 </html>

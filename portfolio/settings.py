@@ -34,6 +34,7 @@ INSTALLED_APPS = [
 
     #local apps
     'myworks.apps.MyworksConfig',
+    'homepage.apps.HomepageConfig',
 
     #django apps
     'django.contrib.admin',

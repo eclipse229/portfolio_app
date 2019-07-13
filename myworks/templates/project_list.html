@@ -1,14 +1,39 @@
 <!-- templates/home.html -->
-{% extends 'base.html' %}
- 
+{% extends "base.html" %} 
+{% load static %}
 
 {% block content %}
-<h2>Projects</h2><hr/>
-{% if project %} 
-{% for project in object_list %}
-<div class="project-entry">
-    <h2><a href=" {% url 'details' project.pk %}">{{ project.title }}</a></h2>
-    {{ project.description | truncatewords:30 }}
-    <p>{{ project.project_url | linebreaks }}</p>
+
+<h1>Projects</h1><hr/>
+   
+<div class="row">
+
+    {% for project in object_list %}
+
+    <div class="col-md-4">
+
+        <div class="card mb-2">
+
+            <img class="card-img-top" src="{% static 'img/homepage.jpeg' %}" alt="" width="30%" height="50%">
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{ project.title }}</h5>
+
+                <p class="card-text">{{ project.description | truncatewords:30 }}</p>
+
+                <a href="{% url 'details' project.pk %}" class="btn btn-primary"> Read More</a><br/><br/>
+
+            </div>
+
+        </div>
+       
+    </div>
+    
+ 
+
+    {% endfor %}
+
 </div>
-{% endfor %} {% else %} {{ error_message }} {% endif %} {% endblock content %}
+
+{% endblock content %}

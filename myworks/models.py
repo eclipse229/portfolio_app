@@ -10,8 +10,9 @@ class Portfolio(models.Model):
     project_url = models.URLField(max_length=100)
     project_repository = models.URLField(max_length=50)
     description = models.TextField(blank=True)
-    technology_used = models.CharField(max_length=15,default='tech  ')
-    date_created = models.DateTimeField(default=timezone.now)
+    technology_used = models.CharField(max_length=15,verbose_name ='technology')
+    # image = models.FilePathField(path='/img',default='pathfile')
+    date_created = models.DateTimeField(auto_now_add=True)
 
 
 
