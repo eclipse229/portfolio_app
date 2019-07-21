@@ -1,0 +1,21 @@
+/*static/base.css */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:18px;
+    border-bottom: 1px solid #999
+    margin-bottom: 2rem;
+}
+   
+h1 a {
+    color: cornflowerblue;
+    text-decoration: none;
+}
+
+body {
+    background-color: darkslategray
+}
+
+p, h5, h1, h4, h6 , hr{
+    color: black;
+}
+

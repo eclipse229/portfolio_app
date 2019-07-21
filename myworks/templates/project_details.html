@@ -11,32 +11,39 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous"> 
-     
+        crossorigin="anonymous">
+
 </head>
+
 <body>
     {% block content %}
-    <h1>{{ project.title }}</h1>
-    <div class="row\">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb- ">
+           <h5> <a href='#'>{{ project.title }}</a><br/></h5>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+   
+   <br/> <div class="row\">
         <div class="col-md-8">
             <img src="{% static 'img/homepage.jpeg' %}" alt="" width="50%" height="70%">
         </div>
+        
     </div>
+    
     <h5>About the project:</h5>
     <p> {{ project.description }}</p>
     <p> Technology used : {{ project.technology_used }}</p>
     <p> created : {{ project.date_created }} </p>
     <ul>
         <h4>To view this project follow the links below </h4>
-        <li> <a href="{{ project.project_url }}"> {{project.project_url }}</a> </li>
-        <li> <a href="{{ project.project_repository }}"> {{project.project_repository }}</a> </li>
+        <li> <a href="{{ project.project_url }}" > {{project.project_url }}</a> </li>
+        <li> <a href="{{ project.project_repository }}" > {{project.project_repository }}</a> </li>
     </ul>
 
 
-    <a href="{% url 'projects' %}" class="btn btn-primary"> Go Back</a><br/><br/>
-
-
-    {% endblock content %}
+    <a href="{% url 'projects' %}" class="btn btn-primary"> Go Back</a><br/><br/> {% endblock content %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

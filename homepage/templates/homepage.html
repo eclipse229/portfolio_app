@@ -1,5 +1,6 @@
 <!-- template/homepage.html -->
-{% extends 'base.html' %} {% load static %}
+<!-- {% extends 'base.html' %} -->
+{% load static %}
 <!doctype html>
 
 <html lang="en">
@@ -11,19 +12,19 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous"> {% block title %}
+        crossorigin="anonymous">
+    <link href="{% static 'base.css' %}" rel="stylesheet"> {% block title %}
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb- ">
-        <h1 class="navbar-brand">Home</h1><br/>
+        <a href="{% url 'home' %}">Home</a><br/>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ user.username }}
+                   <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                         <a class="dropdown-item" href="{% url 'projects' %}">View Projects</a>
@@ -41,7 +42,6 @@
 <body>
 
     {% block content %}
-
     <div class="container">
         <p>
             Hi my name is eclipse and this is my portfolio application. It was built to showcase my web dev works mostly done using python
