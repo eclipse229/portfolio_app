@@ -1,39 +1,68 @@
 <!-- templates/home.html -->
-{% extends "base.html" %} 
-{% load static %}
+{% extends "base.html" %} {% load static %}
 
-{% block content %}
+<!doctype html>
+<html lang="en">
 
-<h1>Projects</h1><hr/>
-   
-<div class="row">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-    {% for project in object_list %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
 
-    <div class="col-md-4">
+</head>
 
-        <div class="card mb-2">
+<body>
 
-            <img class="card-img-top" src="{% static 'img/homepage.jpeg' %}" alt="" width="30%" height="50%">
+    {% block content %}
 
-            <div class="card-body">
+    <h1>Projects</h1>
+    <hr/>
 
-                <h5 class="card-title">{{ project.title }}</h5>
+    <div class="row">
 
-                <p class="card-text">{{ project.description | truncatewords:30 }}</p>
+        {% for project in object_list %}
 
-                <a href="{% url 'details' project.pk %}" class="btn btn-primary"> Read More</a><br/><br/>
+        <div class="col-md-4">
+
+            <div class="card mb-2">
+
+                <img class="card-img-top" src="{% static 'img/homepage.jpeg' %}" alt="" width="30%" height="50%">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ project.title }}</h5>
+
+                    <p class="card-text">{{ project.description | truncatewords:30 }}</p>
+
+                    <a href="{% url 'details' project.pk %}" class="btn btn-primary"> Read More</a><br/><br/>
+
+                </div>
 
             </div>
 
         </div>
-       
+
+
+
+        {% endfor %}
+
     </div>
-    
- 
 
-    {% endfor %}
+    {% endblock content %}
 
-</div>
 
-{% endblock content %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
