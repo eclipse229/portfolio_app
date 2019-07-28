@@ -1,5 +1,5 @@
 <!-- template/homepage.html -->
-<!-- {% extends 'base.html' %} -->
+<!-- Note : The base template file is not extended in this page -->
 {% load static %}
 <!doctype html>
 
@@ -28,7 +28,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                         <a class="dropdown-item" href="{% url 'projects' %}">View Projects</a>
-                        <a class="dropdown-item">About me</a>
+                        <a class="dropdown-item" href='{% url "about" %}'>About me</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item"></a>
                     </div>

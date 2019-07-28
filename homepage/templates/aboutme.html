@@ -1,0 +1,38 @@
+<!-- templates/aboutme.html -->
+<!--Doctype Html -->
+{% extends 'base.html' %} {% load static %}
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+    <link href="{% static 'base.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+    {% block content %}
+    <br/>
+    <div class="col-md-8">
+        <img src="{% static 'img/homepage.jpeg' %}" alt="" width="10%" height="20%">
+    </div>
+
+    <h5>About me</h5>
+    <p> Hi!, My name is eclipse and i am someone who is interested in software development. This is my portfolio application
+        that lists and shows the application created by me.</p>
+        <h6>The following are apps created by me</h6>
+    <ul>      
+        <li><a href="{% url 'projects' %}">Newspaper</a></li>
+        <li><a href='{% url "projects" %}'>Blog application</a></li>
+        <li><a href='{% url "projects" %}'>Todo application</a></li>
+    </ul>
+    {% endblock content %}
+</body>
+
+</html>

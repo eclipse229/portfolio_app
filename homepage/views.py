@@ -5,3 +5,6 @@ from django.views.generic.base import TemplateView
 
 class Homepage(TemplateView):
     template_name = 'homepage.html'
+
+class Authorpage(TemplateView):
+    template_name = 'aboutme.html'
